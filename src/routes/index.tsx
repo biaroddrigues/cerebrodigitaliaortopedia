@@ -73,7 +73,9 @@ function Index() {
             </p>
             <div className="mt-9">
               <Button variant="cta" size="xl" asChild>
-                <a href="#oferta">Quero acessar o Cérebro Digital</a>
+                <a href="https://pay.kiwify.com.br/Luvd6Lr" target="_blank" rel="noopener noreferrer">
+                  Quero acessar o Cérebro Digital
+                </a>
               </Button>
             </div>
           </div>
@@ -183,7 +185,9 @@ function Index() {
             <p className="font-display text-5xl font-bold md:text-6xl">R$ 197,00</p>
             <p className="mt-3 text-muted-foreground">à vista ou em 12x no cartão</p>
             <Button variant="cta" size="xl" className="mt-8 w-full" asChild>
-              <a href="#oferta">Garantir meu acesso agora</a>
+              <a href="https://pay.kiwify.com.br/Luvd6Lr" target="_blank" rel="noopener noreferrer">
+                Garantir meu acesso agora
+              </a>
             </Button>
           </div>
         </div>
