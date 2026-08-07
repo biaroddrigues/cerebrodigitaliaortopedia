@@ -73,7 +73,9 @@ function Index() {
             </p>
             <div className="mt-9">
               <Button variant="cta" size="xl" asChild>
-                <a href="#oferta">Quero acessar o Cérebro Digital</a>
+                <a href="https://pay.kiwify.com.br/Luvd6Lr" target="_blank" rel="noopener noreferrer">
+                  Quero acessar o Cérebro Digital
+                </a>
               </Button>
             </div>
           </div>
