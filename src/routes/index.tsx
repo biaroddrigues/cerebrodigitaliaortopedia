@@ -232,4 +232,3 @@ function Index() {
     </main>
   );
 }
-</content>
