@@ -43,7 +43,7 @@ const passos = [
     n: "03",
     titulo: "Pergunte ao Cérebro Digital",
     texto:
-      "Cole o resumo e pergunte qual a melhor conduta baseada em evidência para aquele caso.",
+      "Tire qualquer tipo de dúvida, desde avaliações complexas, prescrições de exercícios, até condutas baseadas em evidência para qualquer quadro dentro da área de ortopedia.",
   },
   {
     n: "04",
@@ -55,23 +55,43 @@ const passos = [
 function Index() {
   return (
     <main className="min-h-screen bg-background text-foreground">
+      {/* Navbar fixa */}
+      <header className="sticky top-0 z-50 border-b border-border/60 bg-background/70 backdrop-blur-lg">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3.5">
+          <span className="font-display text-base font-bold tracking-tight">
+            Cérebro Digital <span className="glow-text">Ortopedia</span>
+          </span>
+          <nav className="hidden items-center gap-7 text-sm font-medium text-muted-foreground md:flex">
+            <a href="#dor" className="transition-colors hover:text-accent">Sobre</a>
+            <a href="#como-funciona" className="transition-colors hover:text-accent">Como funciona</a>
+            <a href="#bonus" className="transition-colors hover:text-accent">Bônus</a>
+            <a href="#oferta" className="transition-colors hover:text-accent">Preço</a>
+          </nav>
+          <Button variant="cta" size="sm" asChild>
+            <a href="https://pay.kiwify.com.br/Luvd6Lr" target="_blank" rel="noopener noreferrer">
+              Quero acessar
+            </a>
+          </Button>
+        </div>
+      </header>
+
       {/* Hero */}
       <section className="surface-glow relative overflow-hidden border-b border-border">
-        <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-20 md:py-28 lg:grid-cols-2">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 py-14 md:py-16 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14">
           <div>
             <span className="inline-block rounded-full border border-accent/40 bg-accent/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-accent">
               Para fisioterapeutas
             </span>
-            <h1 className="mt-6 text-4xl font-bold leading-[1.05] md:text-6xl">
+            <h1 className="mt-5 text-3xl font-bold leading-[1.1] md:text-5xl">
               Pare de perder horas pesquisando artigos.{" "}
               <span className="glow-text">O seu novo Cérebro Digital em Ortopedia</span>{" "}
               chegou.
             </h1>
-            <p className="mt-6 max-w-xl text-lg text-muted-foreground">
+            <p className="mt-5 max-w-xl text-base text-muted-foreground md:text-lg">
               Um ambiente interativo com as melhores evidências científicas. Com a IA, você
               "conversa" com os artigos e resolve casos clínicos reais em segundos.
             </p>
-            <div className="mt-9">
+            <div className="mt-6">
               <Button variant="cta" size="xl" asChild>
                 <a href="https://pay.kiwify.com.br/Luvd6Lr" target="_blank" rel="noopener noreferrer">
                   Quero acessar o Cérebro Digital
@@ -79,36 +99,39 @@ function Index() {
               </Button>
             </div>
           </div>
-          <div className="relative">
-            <div className="absolute -inset-6 rounded-[2rem] bg-accent/10 blur-3xl" />
+          <div className="relative mx-auto w-full max-w-sm lg:max-w-none">
+            <div className="absolute -inset-4 rounded-[2rem] bg-accent/10 blur-3xl" />
             <img
               src={heroBrain}
               alt="Cérebro digital de IA conectado a exames de imagem ortopédicos"
               width={1200}
               height={1200}
-              className="relative rounded-2xl border border-border shadow-[var(--shadow-card)]"
+              className="relative aspect-square w-full rounded-2xl border border-border object-cover shadow-[var(--shadow-card)]"
             />
           </div>
         </div>
       </section>
 
       {/* Dor */}
-      <section className="mx-auto max-w-3xl px-6 py-20 md:py-24">
-        <h2 className="text-3xl font-bold md:text-4xl">
+      <section id="dor" className="mx-auto max-w-3xl px-6 py-16 md:py-20">
+        <h2 className="text-2xl font-bold md:text-4xl">
           A rotina clínica não te dá tempo para ler dezenas de artigos por semana.
         </h2>
-        <div className="mt-8 space-y-5 text-lg text-muted-foreground">
+        <div className="mt-7 max-w-3xl space-y-5 text-justify text-base text-muted-foreground md:text-lg">
           <p>
-            Entre atendimentos, evoluções e retornos, sobra pouco tempo. E aí vem a
-            insegurança na hora de montar o plano de tratamento: será que essa é mesmo a
-            melhor conduta?
+            Entre atendimentos, evoluções e retornos, sobra pouco tempo. E aí vem a{" "}
+            <span className="font-semibold text-accent">insegurança</span> na hora de montar
+            o plano de tratamento: será que essa é mesmo a melhor conduta?
           </p>
           <p>
             O paciente percebe essa hesitação. Quando falta convicção na sua explicação, ele
-            não fecha o pacote de sessões — e você perde faturamento por algo que não é falta
-            de competência, é falta de tempo.
+            não fecha o pacote de sessões — e você{" "}
+            <span className="font-semibold text-accent">perde faturamento</span> por algo que
+            não é falta de competência, é falta de tempo.
           </p>
-          <p className="font-semibold text-foreground">
+        </div>
+        <div className="mt-6 rounded-2xl border border-accent/40 bg-accent/[0.06] p-6 shadow-[var(--shadow-card)]">
+          <p className="text-justify text-base font-semibold text-foreground md:text-lg">
             A solução não é acumular mais PDFs estáticos. É ter a resposta certa, na hora
             certa.
           </p>
@@ -117,11 +140,11 @@ function Index() {
 
       {/* Solução */}
       <section className="border-y border-border bg-card/40">
-        <div className="mx-auto max-w-3xl px-6 py-20 md:py-24">
-          <h2 className="text-3xl font-bold md:text-4xl">
+        <div className="mx-auto max-w-3xl px-6 py-14 md:py-16">
+          <h2 className="text-2xl font-bold md:text-4xl">
             Conheça o <span className="glow-text">Cérebro Digital Ortopedia</span>
           </h2>
-          <p className="mt-6 text-lg text-muted-foreground">
+          <p className="mt-5 max-w-3xl text-justify text-base text-muted-foreground md:text-lg">
             Este não é um e-book estático, mas um ambiente interativo hospedado na
             inteligência artificial do Google. Reuni a nata das evidências científicas das
             principais patologias ortopédicas para você basear suas condutas na melhor
@@ -131,34 +154,37 @@ function Index() {
       </section>
 
       {/* Como funciona */}
-      <section className="mx-auto max-w-5xl px-6 py-20 md:py-24">
-        <h2 className="text-3xl font-bold md:text-4xl">
+      <section id="como-funciona" className="mx-auto max-w-5xl px-6 py-16 md:py-20">
+        <h2 className="text-2xl font-bold md:text-4xl">
           Como você vai usar o Cérebro Digital na prática:
         </h2>
-        <ol className="mt-12 grid gap-6 md:grid-cols-2">
+        <ol className="mt-9 grid gap-5 md:grid-cols-2">
           {passos.map((p) => (
             <li
               key={p.n}
-              className="rounded-2xl border border-border bg-card p-7 shadow-[var(--shadow-card)]"
+              className="flex flex-col rounded-2xl border border-border bg-card p-6 shadow-[var(--shadow-card)] md:p-7"
             >
-              <span className="font-display text-3xl font-bold text-accent">{p.n}</span>
-              <h3 className="mt-3 text-xl font-semibold">{p.titulo}</h3>
-              <p className="mt-2 text-muted-foreground">{p.texto}</p>
+              <span className="font-display text-2xl font-bold text-accent">{p.n}</span>
+              <h3 className="mt-2.5 text-lg font-semibold md:text-xl">{p.titulo}</h3>
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground md:text-base">
+                {p.texto}
+              </p>
             </li>
           ))}
         </ol>
       </section>
 
       {/* Bônus */}
-      <section className="mx-auto max-w-5xl px-6 pb-20 md:pb-24">
-        <div className="rounded-3xl border border-accent/40 bg-accent/[0.07] p-8 md:p-12">
-          <span className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-            Bônus exclusivo
+      <section id="bonus" className="mx-auto max-w-5xl px-6 pb-16 md:pb-20">
+        <div className="relative overflow-hidden rounded-3xl border border-accent/60 bg-gradient-to-br from-accent/[0.14] via-card to-accent/[0.05] p-8 shadow-[0_0_60px_-15px_theme(colors.accent/0.5)] md:p-12">
+          <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-accent/20 blur-3xl" />
+          <span className="inline-flex items-center gap-2 rounded-full border border-accent/50 bg-accent/15 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-accent">
+            🎁 Bônus exclusivo
           </span>
-          <h2 className="mt-4 text-3xl font-bold md:text-4xl">
-            Bônus Especial: O Prompt de Ouro da Avaliação
+          <h2 className="mt-4 text-2xl font-bold md:text-4xl">
+            Bônus Especial: O <span className="glow-text">Prompt de Ouro</span> da Avaliação
           </h2>
-          <p className="mt-5 max-w-2xl text-lg text-muted-foreground">
+          <p className="mt-4 max-w-2xl text-justify text-base text-muted-foreground md:text-lg">
             Ao garantir seu acesso hoje, você recebe o meu prompt validado para usar no
             Gemini. Ele transforma as suas anotações bagunçadas de avaliação em um resumo
             clínico estruturado em segundos.
@@ -168,23 +194,25 @@ function Index() {
 
       {/* Oferta */}
       <section id="oferta" className="surface-glow border-y border-border">
-        <div className="mx-auto max-w-3xl px-6 py-20 text-center md:py-28">
-          <h2 className="text-3xl font-bold md:text-5xl">
+        <div className="mx-auto max-w-3xl px-6 py-16 text-center md:py-20">
+          <h2 className="text-2xl font-bold md:text-5xl">
             Tudo isso pelo valor de uma única sessão sua.
           </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
+          <p className="mx-auto mt-4 max-w-2xl text-justify text-base text-muted-foreground md:text-lg">
             Fechando um só plano de tratamento com a segurança da nossa ferramenta, ela já se
             paga no primeiro paciente!
           </p>
 
-          <div className="mx-auto mt-12 max-w-md rounded-3xl border border-border bg-card p-10 shadow-[var(--shadow-card)]">
-            <p className="text-muted-foreground line-through">De R$ 497,00</p>
-            <p className="mt-2 text-sm uppercase tracking-[0.18em] text-accent">
-              por apenas
-            </p>
-            <p className="font-display text-5xl font-bold md:text-6xl">R$ 197,00</p>
-            <p className="mt-3 text-muted-foreground">à vista ou em 12x no cartão</p>
-            <Button variant="cta" size="xl" className="mt-8 w-full" asChild>
+          <div className="mx-auto mt-8 max-w-md rounded-3xl border border-accent/40 bg-card p-8 shadow-[0_0_50px_-18px_theme(colors.accent/0.6)] md:p-10">
+            <div className="flex items-center justify-center gap-3">
+              <p className="text-base text-muted-foreground line-through">De R$ 497,00</p>
+              <span className="rounded-full bg-accent/15 px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wide text-accent">
+                por apenas
+              </span>
+            </div>
+            <p className="font-display mt-2 text-5xl font-bold md:text-6xl">R$ 197,00</p>
+            <p className="mt-2 text-sm text-muted-foreground">à vista ou em 12x no cartão</p>
+            <Button variant="cta" size="xl" className="mt-6 w-full" asChild>
               <a href="https://pay.kiwify.com.br/Luvd6Lr" target="_blank" rel="noopener noreferrer">
                 Garantir meu acesso agora
               </a>
